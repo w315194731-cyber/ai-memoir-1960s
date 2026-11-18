@@ -1,0 +1,32 @@
+<Slide style={{ width: '1280px', height: '720px', padding: '0px', background: '#FEFCF8', position: 'relative', flexDirection: 'row' }}>
+  <Box style={{ width: 380, height: 720, background: '#684F48', padding: 56, justifyContent: 'space-between' }}>
+    <Box>
+      <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 14, color: '#E8D9C7', letterSpacing: 3 }}>05 · HIGHLIGHTS</Text>
+      <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 36, fontWeight: 'bold', color: '#FDF9F2', marginTop: 26, lineHeight: 1.4 }}>我们用作品<br />回应了每一个<br />评分维度</Text>
+    </Box>
+    <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 15, color: '#E8D9C7', lineHeight: 1.7 }}>创新性 · 完成度<br />群核技术栈 · 趣味性</Text>
+  </Box>
+
+  <Box style={{ width: 900, height: 720, padding: 44, justifyContent: 'space-between' }}>
+    <Box>
+      {[
+        ['创新性  20%', '旧物新叙事', '把「时代物品」变成可旋转的记忆锚点，让回忆录从读变成体验。'],
+        ['完成度  20%', '完整可运行', '8 章内容、8 件 3D 模型、在线 Demo 全部真实可访问，非概念稿。'],
+        ['群核技术栈 30%', '深度应用', '文生图 + 图生 3D 全流程依赖 Lux3D，是作品资产的核心来源。'],
+        ['有趣程度 25%', '情感共鸣', '从粮票到智能手机，每个人都能在故事里找到自己的一段人生。'],
+      ].map((r, i) => (
+        <Box key={i} style={{ flexDirection: 'row', gap: 22, paddingTop: 18, paddingBottom: 18, borderBottom: '1px solid #E2DEDA' }}>
+          <Box style={{ width: 190 }}>
+            <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 16, fontWeight: 'bold', color: '#684F48' }}>{r[0]}</Text>
+            <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 17, color: '#8E8581', marginTop: 4 }}>{r[1]}</Text>
+          </Box>
+          <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 16, color: '#503C36', flex: 1, lineHeight: 1.6 }}>{r[2]}</Text>
+        </Box>
+      ))}
+    </Box>
+    <Box style={{ background: '#EAE4DB', padding: 20, borderRadius: 10 }}>
+      <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 19, color: '#33241F', lineHeight: 1.55 }}>社交媒体传播 5%：将同步发布小红书与 X，登记链接参与人气奖评选。</Text>
+    </Box>
+    <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 14, color: '#8E8581' }}>拾光 · AI 人生回忆录　|　10</Text>
+  </Box>
+</Slide>
