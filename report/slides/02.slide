@@ -1,0 +1,22 @@
+<Slide style={{ width: '1280px', height: '720px', padding: '60px', background: '#FEFCF8', position: 'relative' }}>
+  <Box style={{ position: 'absolute', left: 60, top: 52 }}>
+    <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 40, fontWeight: 'bold', color: '#33241F' }}>目录</Text>
+    <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 14, color: '#8E8581', letterSpacing: 4, marginTop: 6 }}>CONTENTS</Text>
+  </Box>
+  <Box style={{ position: 'absolute', left: 400, top: 60, width: 820 }}>
+    {[
+      ['01', '项目概览', '一个人，一部缩微的当代史'],
+      ['02', '创意与痛点', '记忆正在流失，回忆录停留在纸上'],
+      ['03', '技术实现', '从一句话到一件可旋转的 3D 物品'],
+      ['04', '成果展示', '一本可以点开、可以走进去的册子'],
+      ['05', '价值与展望', '让每个普通人的一生被认真记下'],
+    ].map((row, i) => (
+      <Box key={i} style={{ flexDirection: 'row', alignItems: 'center', gap: 24, paddingTop: 22, paddingBottom: 22, borderBottom: '1px solid #E2DEDA' }}>
+        <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 26, fontWeight: 'bold', color: '#684F48', width: 56 }}>{row[0]}</Text>
+        <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 26, color: '#33241F', width: 250 }}>{row[1]}</Text>
+        <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 16, color: '#8E8581', flex: 1 }}>{row[2]}</Text>
+      </Box>
+    ))}
+  </Box>
+  <Text style={{ position: 'absolute', left: 60, bottom: 30, fontFamily: 'Source Han Sans, sans-serif', fontSize: 14, color: '#8E8581' }}>拾光 · AI 人生回忆录</Text>
+</Slide>
