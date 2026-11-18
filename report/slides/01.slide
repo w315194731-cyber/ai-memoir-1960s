@@ -1,0 +1,18 @@
+<Slide style={{ width: '1280px', height: '720px', padding: '0px', position: 'relative' }}>
+  <Image src="assets/cover.png" style={{ position: 'absolute', top: 0, left: 0, width: '1280px', height: '720px', objectFit: 'cover' }} />
+  <Box style={{ position: 'absolute', top: 0, left: 0, width: '1280px', height: '720px', background: 'linear-gradient(to top, rgba(20,14,10,0.92) 0%, rgba(20,14,10,0.55) 42%, rgba(20,14,10,0.06) 100%)' }} />
+  <Box style={{ position: 'absolute', left: 72, top: 64, flexDirection: 'row', alignItems: 'center', gap: 14 }}>
+    <Box style={{ width: 30, height: 2, background: '#C9A96E' }} />
+    <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 16, color: '#EAE4DB', letterSpacing: 3 }}>AHOL LUX3D · 3D AI 黑客松参赛作品</Text>
+  </Box>
+  <Box style={{ position: 'absolute', left: 72, top: 300, width: 1000 }}>
+    <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 88, fontWeight: 'bold', color: '#FDF9F2', lineHeight: 1.1 }}>拾光</Text>
+    <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 40, color: '#F0E6D6', marginTop: 12 }}>AI 人生回忆录</Text>
+    <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 22, color: '#D8C9B4', marginTop: 26, lineHeight: 1.6 }}>用 AI，把普通人的一生，变成一本可以走进去的回忆录</Text>
+  </Box>
+  <Box style={{ position: 'absolute', left: 72, bottom: 46, flexDirection: 'row', alignItems: 'center', gap: 18 }}>
+    <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 15, color: '#C9BBAE' }}>项目报告</Text>
+    <Box style={{ width: 1, height: 16, background: '#8E8581' }} />
+    <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 15, color: '#C9BBAE' }}>2026.11</Text>
+  </Box>
+</Slide>
