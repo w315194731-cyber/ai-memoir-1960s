@@ -1,0 +1,35 @@
+<Slide style={{ width: '1280px', height: '720px', padding: '0px', background: '#FEFCF8', position: 'relative' }}>
+  <Box style={{ position: 'absolute', left: 0, top: 0, width: 700, height: 720 }}>
+    <Image src="assets/cover.png" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+    <Box style={{ position: 'absolute', left: 0, bottom: 0, width: 700, height: 180, background: 'linear-gradient(to top, rgba(20,14,10,0.85), rgba(20,14,10,0))' }} />
+    <Text style={{ position: 'absolute', left: 40, bottom: 34, fontFamily: 'Source Han Sans, sans-serif', fontSize: 15, color: '#E8D9C7' }}>在线可体验 · 手机与电脑均可打开</Text>
+  </Box>
+
+  <Box style={{ position: 'absolute', left: 740, top: 52, width: 480 }}>
+    <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 14, color: '#684F48', letterSpacing: 3 }}>04 · RESULT</Text>
+    <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 34, fontWeight: 'bold', color: '#33241F', marginTop: 10, lineHeight: 1.35 }}>一本可以点开、<br />可以走进去的册子</Text>
+  </Box>
+  <Text style={{ position: 'absolute', right: 60, top: 52, fontFamily: 'Source Han Sans, sans-serif', fontSize: 14, color: '#8E8581' }}>09</Text>
+
+  <Box style={{ position: 'absolute', left: 740, top: 218, width: 480 }}>
+    {[
+      ['书册式翻阅', '封面、时间轴目录、8 个章节，按钮与方向键都能翻页。'],
+      ['3D 交互', '每件物品可拖动旋转、滚轮缩放，细节看得清清楚楚。'],
+      ['在线分享', '一键生成公开链接，发给任何人都能在手机或电脑上打开。'],
+    ].map((s, i) => (
+      <Box key={i} style={{ flexDirection: 'row', gap: 16, marginBottom: 26 }}>
+        <Box style={{ width: 36, height: 36, borderRadius: 18, background: '#684F48', alignItems: 'center', justifyContent: 'center' }}>
+          <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 16, fontWeight: 'bold', color: '#FDF9F2' }}>{i + 1}</Text>
+        </Box>
+        <Box style={{ flex: 1 }}>
+          <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 21, color: '#33241F' }}>{s[0]}</Text>
+          <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 16, color: '#503C36', marginTop: 6, lineHeight: 1.6 }}>{s[1]}</Text>
+        </Box>
+      </Box>
+    ))}
+  </Box>
+
+  <Box style={{ position: 'absolute', left: 740, top: 560, width: 480, background: '#241C19', padding: 20, borderRadius: 10 }}>
+    <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 19, color: '#FDF9F2', lineHeight: 1.5 }}>核心功能真实可运行，非概念演示。</Text>
+  </Box>
+</Slide>
