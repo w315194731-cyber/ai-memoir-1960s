@@ -1,0 +1,74 @@
+{
+  "ch1-childhood": {
+    "imageTaskId": 8247945,
+    "imageUrl": "https://qhmtl-cos.kujiale.com/materialtexture/253/207/a2fcbfbfab01afc4096ded4857b4781f8ea3c18.jpg",
+    "modelTaskId": 8248038,
+    "zipUrl": "https://qhsmodel.kujiale.com/genesis3d/inference/20261117/7c76bbf9b05748cdaf5bfcefe9e1de19/results/results.zip",
+    "done": true,
+    "glb": "assets/ch1-childhood.glb",
+    "size": 16090112
+  },
+  "ch2-school": {
+    "imageTaskId": 8248181,
+    "imageUrl": "https://qhmtl-cos.kujiale.com/materialtexture/134/422/16caed794dcd3db78ce3b367e891f3b4c7a0842.jpg",
+    "modelTaskId": 8248206,
+    "zipUrl": "https://qhsmodel.kujiale.com/genesis3d/inference/20261117/34ab3d76dbde44eb91dfcbcc5efed66c/results/results.zip",
+    "done": true,
+    "glb": "assets\\ch2-school.glb",
+    "size": 15979716
+  },
+  "ch3-gaokao": {
+    "imageTaskId": 8248389,
+    "imageUrl": "https://qhmtl-cos.kujiale.com/materialtexture/91b/4b6/dabc4ec14088cf394b5bfaaac51dc05396727c2.jpg",
+    "modelTaskId": 8248434,
+    "zipUrl": "https://qhsmodel.kujiale.com/genesis3d/inference/20261117/5fac1cf6faa74b12bad7b68807e63226/results/results.zip",
+    "done": true,
+    "glb": "assets\\ch3-gaokao.glb",
+    "size": 19295440
+  },
+  "ch4-work": {
+    "imageTaskId": 8248591,
+    "imageUrl": "https://qhmtl-cos.kujiale.com/materialtexture/eda/98f/76682b290bd6b2b6bd424fbed925ba3ca39a025.jpg",
+    "modelTaskId": 8248623,
+    "zipUrl": "https://qhsmodel.kujiale.com/genesis3d/inference/20261117/8600ebbd3aa544ce9ad176cefefe831a/results/results.zip",
+    "done": true,
+    "glb": "assets\\ch4-work.glb",
+    "size": 24215168
+  },
+  "ch5-downsizing": {
+    "imageTaskId": 8248699,
+    "imageUrl": "https://qhmtl-cos.kujiale.com/materialtexture/c09/2ea/3b769029b927fc04860fdc5fc45e80bfa28c32a.jpg",
+    "modelTaskId": 8248731,
+    "zipUrl": "https://qhsmodel.kujiale.com/genesis3d/inference/20261117/69b395ea431744bfab2b4bc98c5e6c74/results/results.zip",
+    "done": true,
+    "glb": "assets\\ch5-downsizing.glb",
+    "size": 16397628
+  },
+  "ch6-house": {
+    "imageTaskId": 8248895,
+    "imageUrl": "https://qhmtl-cos.kujiale.com/materialtexture/072/481/6cd56063e134f104fd3d2291ddd1c3469980d39.jpg",
+    "modelTaskId": 8248930,
+    "zipUrl": "https://qhsmodel.kujiale.com/genesis3d/inference/20261117/7308022141534a4789f7d846535a39fe/results/results.zip",
+    "done": true,
+    "glb": "assets\\ch6-house.glb",
+    "size": 17312300
+  },
+  "ch7-smartphone": {
+    "imageTaskId": 8249077,
+    "imageUrl": "https://qhmtl-cos.kujiale.com/materialtexture/52a/938/6d2d363bd4ff939f20158e3876538c7f0473806.jpg",
+    "modelTaskId": 8249098,
+    "zipUrl": "https://qhsmodel.kujiale.com/genesis3d/inference/20261117/93d7436c988d4360a4c3c0289879a9df/results/results.zip",
+    "done": true,
+    "glb": "assets\\ch7-smartphone.glb",
+    "size": 15540608
+  },
+  "ch8-today": {
+    "imageTaskId": 8249514,
+    "imageUrl": "https://qhmtl-cos.kujiale.com/materialtexture/48d/85e/bf2e13bfabf31e90b9acdb467ab4da533aa47bc.jpg",
+    "modelTaskId": 8249539,
+    "zipUrl": "https://qhsmodel.kujiale.com/genesis3d/inference/20261117/74a69edd8b7146a09180b0d3916b4c6c/results/results.zip",
+    "done": true,
+    "glb": "assets\\ch8-today.glb",
+    "size": 15994800
+  }
+}
