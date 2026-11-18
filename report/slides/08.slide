@@ -1,0 +1,34 @@
+<Slide style={{ width: '1280px', height: '720px', padding: '60px', background: '#FEFCF8', position: 'relative' }}>
+  <Box style={{ position: 'absolute', left: 60, top: 52, flexDirection: 'row', justifyContent: 'space-between', width: 1160, alignItems: 'flex-end' }}>
+    <Box>
+      <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 14, color: '#684F48', letterSpacing: 3 }}>04 · ARTIFACTS</Text>
+      <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 36, fontWeight: 'bold', color: '#33241F', marginTop: 10 }}>八个年代，八个可以拿在手里的记忆</Text>
+    </Box>
+    <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 14, color: '#8E8581' }}>08</Text>
+  </Box>
+  <Box style={{ position: 'absolute', left: 60, top: 168, width: 1160, height: 1, background: '#D6CEC2' }} />
+
+  {[
+    ['assets/ch1-childhood.jpg', '搪瓷缸', '1968 · 票证里的童年'],
+    ['assets/ch4-work.jpg', '二八自行车', '1983 · 端上铁饭碗'],
+    ['assets/ch5-downsizing.jpg', 'BP 机', '1998 · 下岗那年'],
+    ['assets/ch8-today.jpg', '搪瓷脸盆', '2025 · 讲给子孙听'],
+  ].map((c, i) => (
+    <Box key={i} style={{ position: 'absolute', left: 60 + i * 296, top: 196, width: 272 }}>
+      <Box style={{ width: 272, height: 168, borderRadius: 10, overflow: 'hidden', background: '#EAE4DB' }}>
+        <Image src={c[0]} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+      </Box>
+      <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 21, color: '#33241F', marginTop: 14 }}>{c[1]}</Text>
+      <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 14, color: '#8E8581', marginTop: 4 }}>{c[2]}</Text>
+    </Box>
+  ))}
+
+  <Box style={{ position: 'absolute', left: 60, top: 452, width: 1160, padding: 18, background: '#F1EDE7', borderRadius: 10, flexDirection: 'row', alignItems: 'center', gap: 16 }}>
+    <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 18, color: '#503C36' }}>另有：石板与石笔 · 煤油灯 · 黑白电视 · 早期智能手机，共 8 件，均已生成可交互 3D 模型</Text>
+  </Box>
+
+  <Box style={{ position: 'absolute', left: 60, top: 528, width: 1160, background: '#684F48', padding: 22 }}>
+    <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 22, color: '#FDF9F2' }}>结论：一个具体的老物件，比一千字描述更能瞬间把人带回某个年代。</Text>
+  </Box>
+  <Text style={{ position: 'absolute', left: 60, bottom: 24, fontFamily: 'Source Han Sans, sans-serif', fontSize: 14, color: '#8E8581' }}>拾光 · AI 人生回忆录　|　08</Text>
+</Slide>
