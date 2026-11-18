@@ -1,0 +1,24 @@
+{
+  "_comment": "场景生成队列。每个条目就是一个要生成的 3DGS 场景。status 由 worker 自动维护：pending -> submitted -> succeeded/failed。不要手动改 status，除非你想强制重跑（改为 pending 并删除 worldId）。",
+  "settings": {
+    "pollSeconds": 15,
+    "maxWaitSeconds": 1800,
+    "globalDomain": "https://api.aholo.cn"
+  },
+  "scenes": [
+    {
+      "id": "classroom_1996",
+      "name": "梦核旧教室",
+      "status": "succeeded",
+      "worldId": "3FO4K4REJFA7",
+      "prompt": "参考上传的照片，还原一间中国上世纪90年代到2000年代初的旧教室室内空间，真实比例，可漫游。泛黄的旧墙面和绿色墙裙，整齐排列的木质课桌椅，前方的讲台和绿色黑板，黑板上方挂着标语，右侧墙是带铁栏杆的大窗户，天花板装有吊扇和日光灯，下午自然光从窗户斜射进来，空气中能看到浮尘，整体是安静、空无一人、带一点怀旧梦核感的氛围，材质真实，细节清晰，明亮但不刺眼。",
+      "referenceImage": "reference/ref05.jpg",
+      "output": "scene-config.json",
+      "result": {
+        "sceneUrl": "https://holo-cos.aholo3d.cn/spatial-gen-3dgs/3FO4FMYB94BO/aholo/output/22d29d23e1c24d8782c5ebc88a62a562-003812-d909_MaaSReportFile-166c391a1057c6ba4b5dd2d0a3fea802.spz",
+        "panoUrl": "https://holo-cos.aholo3d.cn/spatial-gen-3dgs/3FO4FMYB94BO/aholo/output/22d29d23e1c24d8782c5ebc88a62a562-003812-d909_MaaSReportFile-0fe4854c70981e1788095e0339c502f9.jpg",
+        "plyPath": "https://holo-cos.aholo3d.cn/spatial-gen-3dgs/3FO4FMYB94BO/aholo/output/22d29d23e1c24d8782c5ebc88a62a562-003812-d909_MaaSReportFile-6bdc96a8a8385a22b4890d1ff98a0f99.ply"
+      }
+    }
+  ]
+}
