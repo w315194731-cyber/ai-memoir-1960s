@@ -1,0 +1,30 @@
+<Slide style={{ width: '1280px', height: '720px', padding: '60px', background: '#FEFCF8', position: 'relative' }}>
+  <Box style={{ position: 'absolute', left: 60, top: 52, flexDirection: 'row', justifyContent: 'space-between', width: 1160, alignItems: 'flex-end' }}>
+    <Box>
+      <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 14, color: '#684F48', letterSpacing: 3 }}>05 · VALUE</Text>
+      <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 36, fontWeight: 'bold', color: '#33241F', marginTop: 10 }}>每个普通人的一生，都值得被认真记下</Text>
+    </Box>
+    <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 14, color: '#8E8581' }}>11</Text>
+  </Box>
+  <Box style={{ position: 'absolute', left: 60, top: 170, width: 1160, height: 1, background: '#D6CEC2' }} />
+
+  <Box style={{ position: 'absolute', left: 60, top: 210, width: 1160, flexDirection: 'row', gap: 24 }}>
+    <Box style={{ width: 470, padding: 30, background: '#241C19', borderRadius: 12, minHeight: 350, justifyContent: 'space-between' }}>
+      <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 34, color: '#FDF9F2', lineHeight: 1.5 }}>他们吃过苦，也见过光。<br />没说过什么豪言壮语，<br />却把日子过成了一部历史。</Text>
+      <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 15, color: '#C9A96E', letterSpacing: 2 }}>—— 陈守义，1963—</Text>
+    </Box>
+    <Box style={{ width: 370, padding: 28, background: '#EAE4DB', borderRadius: 12, minHeight: 350 }}>
+      <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 23, color: '#33241F' }}>当下价值</Text>
+      {['家庭记忆的可传承数字档案', '代际之间理解与共情的桥梁', '民间口述史的低成本数字化'].map((t, i) => (
+        <Text key={i} style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 16, color: '#503C36', marginTop: 18, lineHeight: 1.5 }}>· {t}</Text>
+      ))}
+    </Box>
+    <Box style={{ width: 272, padding: 24, background: '#F1EDE7', borderRadius: 12, minHeight: 350 }}>
+      <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 23, color: '#33241F' }}>未来展望</Text>
+      {['接入真实访谈与语音转写', 'AI 追问式采访，自动提炼节点', '从样张走向完整的回忆录产品'].map((t, i) => (
+        <Text key={i} style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 16, color: '#503C36', marginTop: 18, lineHeight: 1.5 }}>· {t}</Text>
+      ))}
+    </Box>
+  </Box>
+  <Text style={{ position: 'absolute', left: 60, bottom: 24, fontFamily: 'Source Han Sans, sans-serif', fontSize: 14, color: '#8E8581' }}>拾光 · AI 人生回忆录　|　11</Text>
+</Slide>
