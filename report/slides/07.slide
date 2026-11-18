@@ -1,0 +1,39 @@
+<Slide style={{ width: '1280px', height: '720px', padding: '60px', background: '#FEFCF8', position: 'relative' }}>
+  <Box style={{ position: 'absolute', left: 60, top: 52, flexDirection: 'row', justifyContent: 'space-between', width: 1160, alignItems: 'flex-end' }}>
+    <Box>
+      <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 14, color: '#684F48', letterSpacing: 3 }}>03 · ASSET ITERATION</Text>
+      <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 36, fontWeight: 'bold', color: '#33241F', marginTop: 10 }}>一件物品，是怎么「长」出来的</Text>
+    </Box>
+    <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 14, color: '#8E8581' }}>07</Text>
+  </Box>
+  <Box style={{ position: 'absolute', left: 60, top: 170, width: 1160, height: 1, background: '#D6CEC2' }} />
+
+  <Box style={{ position: 'absolute', left: 60, top: 200, width: 640, height: 400, borderRadius: 12, overflow: 'hidden' }}>
+    <Image src="assets/ch1-childhood.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+  </Box>
+  <Box style={{ position: 'absolute', left: 60, top: 558, width: 640 }}>
+    <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 14, color: '#8E8581' }}>图：Lux3D 生成的「红双喜搪瓷缸」参考图</Text>
+  </Box>
+
+  <Box style={{ position: 'absolute', left: 740, top: 200, width: 480 }}>
+    <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 24, color: '#33241F', lineHeight: 1.5 }}>以第一章的红双喜搪瓷缸为例</Text>
+    {[
+      ['01 描述', '用提示词写清年代、图案、材质与摆放，让 AI 生成一张写实参考图。'],
+      ['02 图生 3D', '把参考图交给 Lux3D，生成带贴图的三维模型与 3DGS 文件。'],
+      ['03 提取资产', '从返回的压缩包中取出 mesh/tex_mesh.glb，供网页直接加载。'],
+    ].map((s, i) => (
+      <Box key={i} style={{ flexDirection: 'row', gap: 16, marginTop: 24 }}>
+        <Box style={{ width: 3, background: '#684F48', borderRadius: 2 }} />
+        <Box>
+          <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 19, color: '#684F48' }}>{s[0]}</Text>
+          <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 16, color: '#503C36', marginTop: 6, lineHeight: 1.6 }}>{s[1]}</Text>
+        </Box>
+      </Box>
+    ))}
+  </Box>
+
+  <Box style={{ position: 'absolute', left: 740, top: 520, width: 480, padding: 18, background: '#EAE4DB', borderRadius: 10 }}>
+    <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 18, color: '#33241F', lineHeight: 1.5 }}>缸沿磕掉的瓷，是这一代人的共同记忆。</Text>
+  </Box>
+  <Text style={{ position: 'absolute', left: 60, bottom: 24, fontFamily: 'Source Han Sans, sans-serif', fontSize: 14, color: '#8E8581' }}>拾光 · AI 人生回忆录　|　07</Text>
+</Slide>
