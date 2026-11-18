@@ -1,0 +1,31 @@
+<Slide style={{ width: '1280px', height: '720px', padding: '60px', background: '#FEFCF8', position: 'relative' }}>
+  <Box style={{ position: 'absolute', left: 60, top: 52, flexDirection: 'row', justifyContent: 'space-between', width: 1160, alignItems: 'flex-end' }}>
+    <Box>
+      <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 14, color: '#684F48', letterSpacing: 3 }}>02 · INSIGHT</Text>
+      <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 36, fontWeight: 'bold', color: '#33241F', marginTop: 10 }}>记忆正在流失，而回忆录停留在纸上</Text>
+    </Box>
+    <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 14, color: '#8E8581' }}>04</Text>
+  </Box>
+  <Box style={{ position: 'absolute', left: 60, top: 170, width: 1160, height: 1, background: '#D6CEC2' }} />
+
+  <Box style={{ position: 'absolute', left: 60, top: 200, width: 540, padding: 28, background: '#F1EDE7', borderRadius: 12, height: 320 }}>
+    <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 14, color: '#8E8581', letterSpacing: 2 }}>过去 · 传统方式</Text>
+    <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 26, color: '#503C36', marginTop: 18, lineHeight: 1.45 }}>写在纸上，压在箱底</Text>
+    {['文字与老照片，只能看不能走进', '口述听完就散，没有被结构化', ' AI 回忆录多是图文排版，缺沉浸'].map((t, i) => (
+      <Text key={i} style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 17, color: '#503C36', marginTop: 16, lineHeight: 1.5 }}>· {t}</Text>
+    ))}
+  </Box>
+
+  <Box style={{ position: 'absolute', left: 680, top: 200, width: 540, padding: 28, background: '#684F48', borderRadius: 12, height: 320 }}>
+    <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 14, color: '#E8D9C7', letterSpacing: 2 }}>现在 · 拾光</Text>
+    <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 26, color: '#FDF9F2', marginTop: 18, lineHeight: 1.45 }}>可读、可看、可走进</Text>
+    {['3D 场景还原关键人生现场', '时代物品成为可旋转的记忆锚点', '访谈节点自动拆解成册'].map((t, i) => (
+      <Text key={i} style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 17, color: '#F5EDE2', marginTop: 16, lineHeight: 1.5 }}>· {t}</Text>
+    ))}
+  </Box>
+
+  <Box style={{ position: 'absolute', left: 60, top: 556, width: 1160, background: '#241C19', padding: 20 }}>
+    <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 21, color: '#FDF9F2' }}>结论：记忆需要的不是更多文字，而是一个能让人重新「身临其境」的载体。</Text>
+  </Box>
+  <Text style={{ position: 'absolute', left: 60, bottom: 24, fontFamily: 'Source Han Sans, sans-serif', fontSize: 14, color: '#8E8581' }}>拾光 · AI 人生回忆录　|　04</Text>
+</Slide>
