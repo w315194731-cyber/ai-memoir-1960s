@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>人生回忆录 · 样张</title>
+  <style>
+    :root { --bg:#f7f4ee; --paper:#fffdf9; --ink:#26231f; --muted:#6d675e; --line:#e5dfd4; --accent:#2f6b5f; --warm:#c08a4e; }
+    * { box-sizing:border-box; }
+    html,body { margin:0; height:100%; background:var(--bg); color:var(--ink); font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif; }
+    button { font-family:inherit; cursor:pointer; }
+    #app { height:100%; display:flex; flex-direction:column; }
+
+    .topbar { flex:0 0 auto; height:56px; padding:0 28px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); background:rgba(255,253,249,.9); }
+    .brand { font-size:15px; letter-spacing:.08em; }
+    .brand span { font-size:12px; color:var(--muted); letter-spacing:0; }
+    .topbar .right { display:flex; align-items:center; gap:16px; font-size:12px; color:var(--muted); }
+    .ghost { border:1px solid var(--line); background:var(--paper); color:var(--ink); padding:7px 16px; border-radius:999px; font-size:12px; }
+
+    #pages { position:relative; flex:1 1 auto; overflow:hidden; }
+    .page { position:absolute; inset:0; padding:40px 6vw; opacity:0; transform:translateX(18px); transition:opacity .35s ease,transform .35s ease; pointer-events:none; overflow-y:auto; }
+    .page.active { opacity:1; transform:none; pointer-events:auto; }
+
+    .cover { display:flex; align-items:center; justify-content:center; text-align:center; height:100%; }
+    .cover-inner { max-width:620px; }
+    .eyebrow { font-size:12px; letter-spacing:.3em; color:var(--accent); margin-bottom:24px; }
+    .cover h1 { font-size:46px; font-weight:500; letter-spacing:.1em; margin:0 0 20px; }
+    .cover .sub { font-size:15px; line-height:2; color:var(--muted); margin:0 0 36px; }
+    .primary { border:0; background:var(--accent); color:#fff; padding:13px 36px; border-radius:999px; font-size:14px; }
+    .cover .hint { margin-top:18px; font-size:12px; color:#9a948b; }
+
+    .sheet { max-width:1080px; margin:0 auto; height:100%; display:flex; flex-direction:column; }
+    .sheet-head { flex:0 0 auto; margin-bottom:22px; }
+    .kicker { font-size:12px; color:var(--accent); letter-spacing:.16em; margin-bottom:10px; }
+    .sheet h2 { font-size:26px; font-weight:500; margin:0 0 8px; }
+    .sheet .lead { font-size:13px; color:var(--muted); margin:0; line-height:1.8; }
+
+    .timeline { display:flex; flex-direction:column; gap:12px; max-width:760px; margin-top:12px; }
+    .tl-item { display:grid; grid-template-columns:92px 1fr auto; align-items:center; gap:20px; width:100%; text-align:left; background:var(--paper); border:1px solid var(--line); border-radius:12px; padding:18px 22px; color:var(--ink); }
+    .tl-item:hover { border-color:var(--accent); }
+    .tl-year { font-size:18px; color:var(--accent); }
+    .tl-title { font-size:15px; }
+    .tl-note { font-size:12px; color:var(--muted); margin-top:4px; }
+    .badge { font-size:11px; padding:4px 10px; border-radius:999px; border:1px solid var(--line); color:var(--muted); white-space:nowrap; }
+    .badge.d3 { border-color:#b9d6cd; color:var(--accent); }
+
+    .spread { flex:1 1 auto; min-height:0; display:grid; grid-template-columns:1fr 340px; gap:18px; }
+    .stage { position:relative; background:#ebe6dc; border-radius:14px; overflow:hidden; min-height:300px; }
+    #viewer { width:100%; height:100%; }
+    .stage-msg { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; text-align:center; padding:24px; color:var(--muted); font-size:13px; line-height:2; }
+    .stage-msg strong { display:block; color:var(--ink); font-size:16px; font-weight:500; margin-bottom:8px; }
+    .panel { background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:24px; overflow-y:auto; }
+    .panel h3 { font-size:18px; font-weight:500; margin:0 0 4px; }
+    .panel .meta { font-size:12px; color:var(--accent); margin-bottom:16px; }
+    .panel p { font-size:13px; line-height:2; color:#4b463f; margin:0 0 14px; }
+    .tag { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:4px 11px; font-size:11px; color:var(--muted); margin:0 5px 5px 0; }
+    .lesson { border-top:1px solid var(--line); margin-top:16px; padding-top:14px; font-size:13px; line-height:1.9; color:var(--ink); }
+    .lesson b { color:var(--accent); font-weight:500; }
+
+    .photo { position:relative; background:#e9dfcd; border-radius:14px; overflow:hidden; min-height:300px; display:flex; align-items:center; justify-content:center; }
+    .photo .window { position:absolute; width:42%; height:62%; right:12%; top:14%; background:linear-gradient(180deg,#f6e8c9 0%,#dcc49a 100%); border:10px solid #f7f2e7; box-shadow:0 6px 24px rgba(90,70,40,.12); }
+    .photo .window::after { content:""; position:absolute; left:50%; top:0; bottom:0; width:6px; background:#f7f2e7; transform:translateX(-50%); }
+    .photo .desk { position:absolute; left:12%; bottom:14%; width:52%; height:16%; background:#b99062; border-radius:4px; box-shadow:0 8px 0 #9c754c; }
+    .photo .caption { position:absolute; left:20px; bottom:16px; font-size:12px; color:#7b6a52; letter-spacing:.08em; background:rgba(255,253,249,.82); padding:6px 12px; border-radius:999px; }
+    .photo img { width:100%; height:100%; object-fit:cover; display:block; }
+
+    .qa { display:flex; flex-direction:column; gap:14px; }
+    .bubble { background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:16px 20px; font-size:13px; line-height:1.9; }
+    .bubble .who { font-size:11px; color:var(--accent); margin-bottom:6px; letter-spacing:.1em; }
+    .bubble.answer { background:#f3ede1; border-color:#e2d8c6; }
+    .fields { display:flex; flex-direction:column; gap:10px; }
+    .field { background:var(--paper); border:1px solid var(--line); border-radius:10px; padding:12px 16px; font-size:13px; }
+    .field span { display:block; font-size:11px; color:var(--muted); margin-bottom:4px; }
+
+    .nav { flex:0 0 auto; height:64px; border-top:1px solid var(--line); display:flex; align-items:center; justify-content:space-between; padding:0 28px; background:rgba(255,253,249,.9); }
+    .nav button { border:1px solid var(--line); background:var(--paper); color:var(--ink); padding:9px 18px; border-radius:999px; font-size:13px; }
+    .nav button:disabled { opacity:.35; cursor:not-allowed; }
+    .dots { display:flex; gap:8px; }
+    .dot { width:8px; height:8px; border-radius:50%; border:0; background:#d9d2c6; padding:0; }
+    .dot.active { background:var(--accent); transform:scale(1.25); }
+    .scene-overlay { position:fixed; inset:0; z-index:50; background:#f2eee6; display:none; }
+    .scene-overlay.active { display:block; }
+    .scene-top { position:absolute; top:0; left:0; right:0; height:58px; z-index:3; display:flex; align-items:center; justify-content:space-between; padding:0 22px; background:rgba(255,253,249,.92); border-bottom:1px solid var(--line); }
+    .scene-top .where { font-size:14px; letter-spacing:.08em; }
+    .scene-canvas { position:absolute; inset:58px 0 0 0; }
+    .scene-panel { position:absolute; right:22px; top:80px; z-index:2; width:300px; max-height:calc(100% - 140px); overflow-y:auto; background:rgba(255,253,249,.95); border:1px solid var(--line); border-radius:14px; padding:20px 22px; display:none; }
+    .scene-panel.show { display:block; }
+    .scene-panel h3 { font-size:17px; font-weight:500; margin:0 0 12px; }
+    .scene-panel p { font-size:13px; line-height:1.9; color:#4b463f; margin:0 0 12px; }
+    .scene-hint { position:absolute; left:22px; bottom:20px; z-index:2; font-size:12px; color:#8d867c; background:rgba(255,253,249,.8); border-radius:999px; padding:8px 14px; }
+    .enter { border:0; background:var(--accent); color:#fff; padding:12px 26px; border-radius:999px; font-size:14px; }
+    .preview-note { margin-top:14px; font-size:12px; color:var(--muted); }
+    @media (max-width:760px) {
+      .scene-panel { right:12px; left:12px; width:auto; top:auto; bottom:58px; max-height:42vh; }
+      .page { padding:26px 20px; }
+      .cover h1 { font-size:34px; }
+      .spread { grid-template-columns:1fr; grid-template-rows:minmax(220px,1fr) auto; }
+      .panel { max-height:40vh; }
+      .tl-item { grid-template-columns:70px 1fr; }
+      .tl-item .badge { grid-column:2; justify-self:start; }
+    }
+  </style>
+  <script type="importmap">
+    { "imports": { "three": "https://esm.sh/three@0.180.0", "three/addons/": "https://esm.sh/three@0.180.0/examples/jsm/" } }
+  </script>
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <div class="brand">人生回忆录 <span>· 第一版样张</span></div>
+    <div class="right"><span id="pageLabel">封面</span><button class="ghost" id="tocBtn">目录</button></div>
+  </header>
+
+  <main id="pages">
+    <section class="page active" data-title="封面">
+      <div class="cover">
+        <div class="cover-inner">
+          <div class="eyebrow">一生 · 若干节点 · 一本册子</div>
+          <h1>人生回忆录</h1>
+          <p class="sub">从一次访谈开始，把散落的时间点装订成册。<br />有些页可以翻，有些页可以走进去。</p>
+          <button class="primary" id="startBtn">打开这本册子</button>
+          <div class="hint">用左右方向键也可以翻页</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" data-title="目录">
+      <div class="sheet">
+        <div class="sheet-head">
+          <div class="kicker">CONTENTS</div>
+          <h2>时间轴</h2>
+          <p class="lead">每个节点来自一次提问和一段回答。带标记的页是可漫游的 3D 场景，其余是图文卡片。</p>
+        </div>
+        <div class="timeline">
+          <button class="tl-item" id="enterFromToc">
+            <span class="tl-year">1996</span>
+            <span><span class="tl-title">那间教室</span><span class="tl-note">点这里直接走进 3D 场景</span></span>
+            <span class="badge d3">3D 场景</span>
+          </button>
+          <button class="tl-item" data-go="3">
+            <span class="tl-year">2003</span>
+            <span><span class="tl-title">第一次离开家</span><span class="tl-note">绿皮火车、行李箱、车站的雨</span></span>
+            <span class="badge">图文卡片</span>
+          </button>
+          <div class="tl-item" style="cursor:default">
+            <span class="tl-year">2011</span>
+            <span><span class="tl-title">第一次带团队</span><span class="tl-note">待补：等一次新的访谈</span></span>
+            <span class="badge">待补</span>
+          </div>
+          <button class="tl-item" data-go="4">
+            <span class="tl-year">附录</span>
+            <span><span class="tl-title">一次访谈是怎么变成节点的</span><span class="tl-note">看从问答到字段的提炼过程</span></span>
+            <span class="badge">流程样例</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" data-title="1996 · 那间教室">
+      <div class="sheet">
+        <div class="sheet-head">
+          <div class="kicker">节点 01 · 1996</div>
+          <h2>那间教室</h2>
+          <p class="lead">照着一张中式梦核旧教室照片重建：黄色桌面、蓝腿椅子、吊扇、铁栏窗和旧黑板。点「走进这间教室」进入可以转着看的 3D。</p>
+        </div>
+        <div class="spread">
+          <div class="photo">
+            <img src="./reference/ref05.jpg" alt="参考照片：中式梦核旧教室" />
+            <div class="caption">参考照片 · 美篇《学校核》，3D 按此重建</div>
+          </div>
+          <aside class="panel">
+            <h3>一间普通的中学教室</h3>
+            <div class="meta">场景介绍 · 示例文案，可替换</div>
+            <div><span class="tag">粉笔灰</span><span class="tag">靠窗的座位</span><span class="tag">下午的光</span></div>
+            <button class="enter" id="enterClassroom" style="margin:4px 0 10px">走进这间教室 →</button>
+            <div class="preview-note">默认由 three.js 即时生成，不需要 API；接上群核地址后自动换成 3DGS 场景。</div>
+            <p>推门进去，先闻到的是粉笔灰混着旧木课桌的味道。桌面上一道道刻痕，比任何一本相册都记得清楚：谁在下面传过纸条，谁被点起来念课文。</p>
+            <p>靠窗那排最抢手。下午的光斜着铺进来，落在摊开的练习册上，粉笔末在光里慢慢飘。黑板上方标语褪了色，讲台角落还搁着半盒没用完的粉笔。</p>
+            <p>后排的钟走得不急不慢。下课铃一响，椅子摩擦地面的声音盖过一切；再安静下来时，窗外只剩操场上的风。</p>
+            <div class="lesson"><b>那时候学到的：</b>坐在一个靠窗的位置，日子会过得慢一点，也亮一点。</div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" data-title="2003 · 第一次离开家">
+      <div class="sheet">
+        <div class="sheet-head">
+          <div class="kicker">节点 02 · 2003</div>
+          <h2>第一次离开家</h2>
+          <p class="lead">不是每个节点都需要 3D。一张老照片、几句话和一句教训，也能翻出一页。</p>
+        </div>
+        <div class="spread">
+          <div class="photo">
+            <div class="window"></div><div class="desk"></div>
+            <div class="caption">照片位 · 换成当事人的老照片</div>
+          </div>
+          <aside class="panel">
+            <h3>绿皮火车往南开</h3>
+            <div class="meta">图文卡片 · 示例文案，可替换</div>
+            <p>母亲把煮好的鸡蛋塞进背包侧袋，反复说“到了打电话”。车窗外站台往后退，雨点打在玻璃上，像一堆没说完的话。</p>
+            <p>那趟车开了十四个小时。我抱着背包坐了一路，怕睡着，也怕醒来真的就到了。</p>
+            <p>很多年后才明白，那种怕，不是怕陌生的城市，是第一次知道自己要独自承担一段路。</p>
+            <div class="lesson"><b>那时候学到的：</b>离开不是告别，是把家从地点变成一种随身带着的东西。</div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" data-title="附录 · 访谈到节点">
+      <div class="sheet">
+        <div class="sheet-head">
+          <div class="kicker">APPENDIX · 流程样例</div>
+          <h2>一次访谈，怎么变成一个节点</h2>
+          <p class="lead">AI 追问的是具体细节，不是“你的人生怎么样”。回答进来后，被拆成时间、事件、感受和教训四个字段。</p>
+        </div>
+        <div class="spread">
+          <div class="qa">
+            <div class="bubble"><div class="who">AI 追问 01</div>你记得那天的天气吗？光线从哪个方向照进来？</div>
+            <div class="bubble answer"><div class="who">当事人回答</div>下午，太阳斜着从窗户照进来，粉笔末在光里飘。我坐在第三排靠窗。</div>
+            <div class="bubble"><div class="who">AI 追问 02</div>那件事过后，你明白了什么以前不明白的道理？</div>
+            <div class="bubble answer"><div class="who">当事人回答</div>原来好位置不是抢来的，是有人愿意把窗边让给新同学。</div>
+          </div>
+          <aside class="fields">
+            <div class="field"><span>时间</span>1996 年，一个下午</div>
+            <div class="field"><span>地点</span>中学教室，第三排靠窗</div>
+            <div class="field"><span>事件</span>新同学坐到了窗边，我把座位换给了他</div>
+            <div class="field"><span>当时的感受</span>不甘心，又有点松了口气</div>
+            <div class="field"><span>后来学到的</span>让出去的位置，会以另一种方式回来</div>
+            <div class="field"><span>呈现方式</span>3D 场景 + 图文页</div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="nav">
+    <button id="prevBtn">← 上一页</button>
+    <div class="dots" id="dots"></div>
+    <button id="nextBtn">下一页 →</button>
+  </footer>
+</div>
+
+<div id="sceneView" class="scene-overlay">
+  <div class="scene-top">
+    <button class="ghost" id="sceneBack">← 返回册子</button>
+    <span class="where">1996 · 那间教室</span>
+    <button class="ghost" id="sceneInfo">介绍</button>
+  </div>
+  <div class="scene-canvas" id="sceneCanvas"></div>
+  <div class="scene-panel" id="scenePanel">
+    <h3>一间普通的中学教室</h3>
+    <p>推门进去，先闻到的是粉笔灰混着旧木课桌的味道。靠窗那排最抢手，下午的光斜着铺进来，粉笔末在光里慢慢飘。</p>
+    <p>后排的钟走得不急不慢。下课铃一响，椅子摩擦地面的声音盖过一切；再安静下来时，窗外只剩操场上的风。</p>
+    <div class="lesson"><b>那时候学到的：</b>坐在一个靠窗的位置，日子会过得慢一点，也亮一点。</div>
+  </div>
+  <div class="scene-hint">拖动旋转 · 滚轮缩放 · 右上角看介绍</div>
+</div>
+
+<script type="module">
+  const pages = [...document.querySelectorAll('.page')];
+  const dotsBox = document.getElementById('dots');
+  const label = document.getElementById('pageLabel');
+  const prev = document.getElementById('prevBtn');
+  const next = document.getElementById('nextBtn');
+  let current = 0;
+  let sceneReady = false;
+  const sceneView = document.getElementById('sceneView');
+  const scenePanel = document.getElementById('scenePanel');
+
+  pages.forEach((_, i) => {
+    const d = document.createElement('button');
+    d.className = 'dot' + (i === 0 ? ' active' : '');
+    d.setAttribute('aria-label', '第 ' + (i + 1) + ' 页');
+    d.onclick = () => go(i);
+    dotsBox.appendChild(d);
+  });
+  const dots = [...dotsBox.children];
+
+  function go(i) {
+    if (i < 0 || i >= pages.length) return;
+    pages[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = i;
+    pages[current].classList.add('active');
+    dots[current].classList.add('active');
+    label.textContent = pages[current].dataset.title;
+    prev.disabled = current === 0;
+    next.disabled = current === pages.length - 1;
+  }
+  prev.onclick = () => go(current - 1);
+  next.onclick = () => go(current + 1);
+  document.getElementById('startBtn').onclick = () => go(1);
+  document.getElementById('tocBtn').onclick = () => go(1);
+  document.querySelectorAll('[data-go]').forEach(b => { b.onclick = () => go(Number(b.dataset.go)); });
+  go(0);
+
+  document.getElementById('enterClassroom').onclick = openScene;
+  document.getElementById('enterFromToc').onclick = openScene;
+  document.getElementById('sceneBack').onclick = closeScene;
+  document.getElementById('sceneInfo').onclick = () => scenePanel.classList.toggle('show');
+
+  addEventListener('keydown', e => {
+    if (sceneView.classList.contains('active')) {
+      if (e.key === 'Escape') closeScene();
+      return;
+    }
+    if (e.key === 'ArrowRight') go(current + 1);
+    if (e.key === 'ArrowLeft') go(current - 1);
+  });
+
+  function openScene() {
+    sceneView.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    if (!sceneReady) { sceneReady = true; initScene(); }
+  }
+  function closeScene() {
+    sceneView.classList.remove('active');
+    document.body.style.overflow = '';
+    scenePanel.classList.remove('show');
+  }
+
+  async function initScene() {
+    const host = document.getElementById('sceneCanvas');
+    let config = {};
+    try {
+      const res = await fetch('./scene-config.json?t=' + Date.now());
+      if (res.ok) config = await res.json();
+    } catch (e) { console.info('scene-config.json not loaded'); }
+    if (config.embedHtml) { host.innerHTML = config.embedHtml; return; }
+    if (config.sceneUrl) await initAholo(host, config.sceneUrl);
+    else await initThree(host);
+  }
+
+  async function initAholo(host, url) {
+    try {
+      const V = await import('https://esm.sh/@manycore/aholo-viewer@1.14.0');
+      const ext = url.split('?')[0].split('.').pop().toLowerCase();
+      const fileType = ext === 'ply' ? V.SplatFileType.PLY : ext === 'spz' ? V.SplatFileType.SPZ : V.SplatFileType.SOG;
+      const packType = ext === 'ply' ? V.SplatPackType.Raw : V.SplatPackType.Compressed;
+      const viewer = V.createViewer('memoir-viewer', host, {});
+      const data = await V.SplatLoader.parseSplatData(fileType, url, packType);
+      const splat = await V.SplatUtils.createSplat(data);
+      const camera = new V.PerspectiveCamera(60, host.clientWidth / Math.max(1, host.clientHeight), 0.1, 2000);
+      camera.up.set(0, -1, 0);
+      let yaw = 0, pitch = -0.2, radius = 4;
+      const place = () => {
+        camera.position.set(Math.sin(yaw) * Math.cos(pitch) * radius, Math.sin(pitch) * radius, Math.cos(yaw) * Math.cos(pitch) * radius);
+        camera.lookAt(new V.Vector3(0, 0, 0));
+        viewer.render();
+      };
+      viewer.getScene().add(splat);
+      viewer.setCamera(camera);
+      V.setViewerConfig(viewer, {
+        pipeline: {
+          Background: { background: { active: V.BackgroundMode.BasicBackground, basic: { color: new V.Color(0xfaf8f4) } }, ground: { enabled: false } },
+          Splatting: { enabled: true }, TAA: { enabled: false }
+        }
+      });
+      viewer.requestRenderHandler = () => requestAnimationFrame(() => viewer.render());
+      let dragging = false, px = 0, py = 0;
+      host.addEventListener('pointerdown', e => { dragging = true; px = e.clientX; py = e.clientY; });
+      addEventListener('pointerup', () => { dragging = false; });
+      addEventListener('pointermove', e => {
+        if (!dragging) return;
+        yaw -= (e.clientX - px) * 0.006;
+        pitch = Math.max(-1.2, Math.min(1.2, pitch + (e.clientY - py) * 0.004));
+        px = e.clientX; py = e.clientY; place();
+      });
+      host.addEventListener('wheel', e => { radius = Math.max(1, Math.min(20, radius + e.deltaY * 0.004)); e.preventDefault(); place(); }, { passive: false });
+      addEventListener('resize', () => { camera.aspect = host.clientWidth / Math.max(1, host.clientHeight); camera.updateProjectionMatrix(); place(); });
+      place();
+    } catch (err) {
+      console.error(err);
+      host.textContent = '3DGS 场景加载失败，请检查 scene-config.json 的地址。';
+    }
+  }
+
+  async function initThree(host) {
+    try {
+      const THREE = await import('three');
+      const { OrbitControls } = await import('three/addons/controls/OrbitControls.js');
+      const scene = new THREE.Scene();
+      scene.background = new THREE.Color(0xe6dcc5);
+      scene.fog = new THREE.FogExp2(0xe6dcc5, 0.022);
+      const camera = new THREE.PerspectiveCamera(58, host.clientWidth / Math.max(1, host.clientHeight), 0.1, 100);
+      camera.position.set(3.4, 1.7, 4.2);
+      const renderer = new THREE.WebGLRenderer({ antialias: true });
+      renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+      renderer.outputColorSpace = THREE.SRGBColorSpace;
+      host.appendChild(renderer.domElement);
+      const controls = new OrbitControls(camera, renderer.domElement);
+      controls.target.set(-0.8, 1.25, -1.2);
+      controls.enableDamping = true;
+      controls.maxPolarAngle = Math.PI / 2 - 0.05;
+      controls.minDistance = 1.5;
+      controls.maxDistance = 14;
+      controls.update();
+
+      scene.add(new THREE.HemisphereLight(0xfff2d6, 0x4a5b4a, 1.05));
+      const sun = new THREE.DirectionalLight(0xffd9a0, 2.6);
+      sun.position.set(7, 5, 1);
+      scene.add(sun);
+      const fill = new THREE.PointLight(0xffe6bb, 16, 14);
+      fill.position.set(-3, 3, -3);
+      scene.add(fill);
+
+      const upperMat = new THREE.MeshStandardMaterial({ color: 0xdcd2b4, roughness: .95 });
+      const lowerMat = new THREE.MeshStandardMaterial({ color: 0x6f8f79, roughness: .9 });
+      const floorMat = new THREE.MeshStandardMaterial({ color: 0x8f9b92, roughness: .92 });
+      const deskTopMat = new THREE.MeshStandardMaterial({ color: 0xd9a93f, roughness: .75 });
+      const deskBodyMat = new THREE.MeshStandardMaterial({ color: 0xd8d4c6, roughness: .85 });
+      const chairMat = new THREE.MeshStandardMaterial({ color: 0x6c78b0, roughness: .7 });
+      const metalMat = new THREE.MeshStandardMaterial({ color: 0x9aa0a3, roughness: .5, metalness: .3 });
+      const boardMat = new THREE.MeshStandardMaterial({ color: 0x253a34, roughness: .95 });
+      const frameMat = new THREE.MeshStandardMaterial({ color: 0xe8e2d0, roughness: .8 });
+
+      const floor = new THREE.Mesh(new THREE.PlaneGeometry(12, 10), floorMat);
+      floor.rotation.x = -Math.PI / 2;
+      scene.add(floor);
+      const walls = [
+        { size: [12, .12], pos: [0, -5], rot: 0 },
+        { size: [.12, 10], pos: [-6, 0], rot: 0 },
+        { size: [.12, 10], pos: [6, 0], rot: 0 }
+      ];
+      walls.forEach(w => {
+        const lower = new THREE.Mesh(new THREE.BoxGeometry(w.size[0], 1.15, w.size[1]), lowerMat);
+        lower.position.set(w.pos[0], .575, w.pos[1]); scene.add(lower);
+        const upper = new THREE.Mesh(new THREE.BoxGeometry(w.size[0], 2.45, w.size[1]), upperMat);
+        upper.position.set(w.pos[0], 2.375, w.pos[1]); scene.add(upper);
+      });
+
+      const board = new THREE.Mesh(new THREE.BoxGeometry(5.4, 1.9, .06), boardMat);
+      board.position.set(-2.2, 2.0, -4.9); scene.add(board);
+      const tray = new THREE.Mesh(new THREE.BoxGeometry(5.6, .08, .28), frameMat);
+      tray.position.set(-2.2, 1.0, -4.76); scene.add(tray);
+      const chalkCanvas = document.createElement('canvas');
+      chalkCanvas.width = 1024; chalkCanvas.height = 360;
+      const cc = chalkCanvas.getContext('2d');
+      cc.clearRect(0, 0, 1024, 360);
+      cc.fillStyle = 'rgba(245,242,225,.78)';
+      cc.font = '46px Microsoft YaHei'; cc.textAlign = 'center';
+      cc.fillText('今天作业：练习册 P42', 512, 90);
+      cc.font = '38px Microsoft YaHei';
+      cc.fillText('预习下一课 · 默写生字', 512, 160);
+      cc.font = '32px Microsoft YaHei';
+      cc.fillText('1996. 秋', 860, 300);
+      const chalkTex = new THREE.CanvasTexture(chalkCanvas);
+      const chalk = new THREE.Mesh(new THREE.PlaneGeometry(5.0, 1.76), new THREE.MeshBasicMaterial({ map: chalkTex, transparent: true }));
+      chalk.position.set(-2.2, 2.0, -4.855); scene.add(chalk);
+      const bannerCanvas = document.createElement('canvas');
+      bannerCanvas.width = 1024; bannerCanvas.height = 128;
+      const bc = bannerCanvas.getContext('2d');
+      bc.fillStyle = '#e9dfc2'; bc.fillRect(0, 0, 1024, 128);
+      bc.fillStyle = '#a33a2e'; bc.font = '600 62px Microsoft YaHei'; bc.textAlign = 'center';
+      bc.fillText('自强不息   厚德载物', 512, 88);
+      const banner = new THREE.Mesh(new THREE.PlaneGeometry(5.4, .68), new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(bannerCanvas) }));
+      banner.position.set(-2.2, 3.18, -4.85); scene.add(banner);
+
+      for (let i = 0; i < 3; i++) {
+        const z = -3 + i * 3;
+        const glass = new THREE.Mesh(new THREE.PlaneGeometry(2.2, 1.7), new THREE.MeshBasicMaterial({ color: 0xf5e8c8, transparent: true, opacity: .88 }));
+        glass.rotation.y = -Math.PI / 2; glass.position.set(5.92, 2.1, z); scene.add(glass);
+        for (let b = 0; b <= 4; b++) {
+          const bar = new THREE.Mesh(new THREE.BoxGeometry(.05, 1.8, .05), metalMat);
+          bar.position.set(5.86, 2.1, z - 1.05 + b * .525); scene.add(bar);
+        }
+        [1.3, 2.1, 2.9].forEach(y => {
+          const bar = new THREE.Mesh(new THREE.BoxGeometry(.05, .05, 2.2), metalMat);
+          bar.position.set(5.86, y, z); scene.add(bar);
+        });
+        const sill = new THREE.Mesh(new THREE.BoxGeometry(.25, .08, 2.3), frameMat);
+        sill.position.set(5.86, 1.22, z); scene.add(sill);
+      }
+
+      const podium = new THREE.Mesh(new THREE.BoxGeometry(1.3, .9, .7), deskTopMat);
+      podium.position.set(-4.2, .45, -4.0); scene.add(podium);
+
+      function makeDesk() {
+        const g = new THREE.Group();
+        const top = new THREE.Mesh(new THREE.BoxGeometry(1.05, .06, .62), deskTopMat); top.position.y = .74; g.add(top);
+        const box = new THREE.Mesh(new THREE.BoxGeometry(.96, .3, .54), deskBodyMat); box.position.y = .55; g.add(box);
+        [[-.44, -.23], [.44, -.23], [-.44, .23], [.44, .23]].forEach(([x, z]) => {
+          const leg = new THREE.Mesh(new THREE.BoxGeometry(.045, .7, .045), metalMat); leg.position.set(x, .35, z); g.add(leg);
+        });
+        const seat = new THREE.Mesh(new THREE.BoxGeometry(.5, .05, .42), chairMat); seat.position.set(0, .44, .74); g.add(seat);
+        const backRest = new THREE.Mesh(new THREE.BoxGeometry(.5, .48, .05), chairMat); backRest.position.set(0, .72, .94); g.add(backRest);
+        return g;
+      }
+      const bookMats = [
+        new THREE.MeshStandardMaterial({ color: 0xc85b45, roughness: .9 }),
+        new THREE.MeshStandardMaterial({ color: 0x4a7fa5, roughness: .9 }),
+        new THREE.MeshStandardMaterial({ color: 0xe3d8b0, roughness: .9 })
+      ];
+      for (let r = 0; r < 5; r++) for (let c = 0; c < 5; c++) {
+        const d = makeDesk(); d.position.set(-3.5 + c * 1.7, 0, -3.4 + r * 1.6); scene.add(d);
+        if ((r + c) % 3 === 0) {
+          const b = new THREE.Mesh(new THREE.BoxGeometry(.28, .035, .2), bookMats[(r + c) % 3]);
+          b.position.set(-3.5 + c * 1.7 + .18, .78, -3.4 + r * 1.6);
+          b.rotation.y = (r - c) * .08; scene.add(b);
+        }
+      }
+
+      const fans = [];
+      [[-3, -3], [3, -3], [-3, 2], [3, 2]].forEach(([x, z]) => {
+        const g = new THREE.Group();
+        const rod = new THREE.Mesh(new THREE.CylinderGeometry(.025, .025, .42, 8), metalMat); rod.position.y = 3.32; g.add(rod);
+        const motor = new THREE.Mesh(new THREE.CylinderGeometry(.16, .16, .12, 12), metalMat); motor.position.y = 3.08; g.add(motor);
+        for (let k = 0; k < 4; k++) {
+          const blade = new THREE.Mesh(new THREE.BoxGeometry(1.15, .02, .17), frameMat);
+          blade.position.set(.62, 3.02, 0); blade.rotation.y = 0;
+          const pivot = new THREE.Group(); pivot.rotation.y = k * Math.PI / 2; pivot.add(blade); g.add(pivot);
+        }
+        g.position.set(x, 0, z); scene.add(g); fans.push(g);
+      });
+
+      const canvas = document.createElement('canvas');
+      canvas.width = 512; canvas.height = 128;
+      const ctx = canvas.getContext('2d');
+      ctx.fillStyle = '#7a5b34'; ctx.font = '600 54px Microsoft YaHei'; ctx.textAlign = 'center';
+      ctx.fillText('1996 · 老教室', 256, 80);
+      const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: new THREE.CanvasTexture(canvas), transparent: true }));
+      sprite.scale.set(3.2, .8, 1); sprite.position.set(0, 3.25, -4.6); scene.add(sprite);
+
+      function resize() {
+        const w = host.clientWidth, h = host.clientHeight;
+        camera.aspect = w / Math.max(1, h);
+        camera.updateProjectionMatrix();
+        renderer.setSize(w, h);
+      }
+      addEventListener('resize', resize);
+      renderer.setAnimationLoop(() => {
+        fans.forEach(f => { f.rotation.y += .018; });
+        controls.update(); renderer.render(scene, camera);
+      });
+      resize();
+    } catch (err) {
+      console.error(err);
+      host.textContent = 'three.js 教室加载失败，请检查网络是否能访问 esm.sh。';
+    }
+  }
+</script>
+</body>
+</html>
