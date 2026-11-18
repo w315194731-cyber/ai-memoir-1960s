@@ -1,0 +1,10 @@
+{
+  "sceneUrl": "https://holo-cos.aholo3d.cn/spatial-gen-3dgs/3FO4FMYB94BO/aholo/output/22d29d23e1c24d8782c5ebc88a62a562-003812-d909_MaaSReportFile-166c391a1057c6ba4b5dd2d0a3fea802.spz",
+  "embedHtml": "",
+  "_comment": "sceneUrl 为 Aholo 生成的教室 3DGS 场景；清空此值即可回退到 three.js 代码建模场景。",
+  "_source": {
+    "worldId": "3FO4K4REJFA7",
+    "plyPath": "https://holo-cos.aholo3d.cn/spatial-gen-3dgs/3FO4FMYB94BO/aholo/output/22d29d23e1c24d8782c5ebc88a62a562-003812-d909_MaaSReportFile-6bdc96a8a8385a22b4890d1ff98a0f99.ply",
+    "panoUrl": "https://holo-cos.aholo3d.cn/spatial-gen-3dgs/3FO4FMYB94BO/aholo/output/22d29d23e1c24d8782c5ebc88a62a562-003812-d909_MaaSReportFile-0fe4854c70981e1788095e0339c502f9.jpg"
+  }
+}
