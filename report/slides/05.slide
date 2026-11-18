@@ -1,0 +1,45 @@
+<Slide style={{ width: '1280px', height: '720px', padding: '60px', background: '#FEFCF8', position: 'relative' }}>
+  <Box style={{ position: 'absolute', left: 60, top: 52, flexDirection: 'row', justifyContent: 'space-between', width: 1160, alignItems: 'flex-end' }}>
+    <Box>
+      <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 14, color: '#684F48', letterSpacing: 3 }}>03 · PIPELINE</Text>
+      <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 36, fontWeight: 'bold', color: '#33241F', marginTop: 10 }}>从一句话，到一件可以旋转的 3D 物品</Text>
+    </Box>
+    <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 14, color: '#8E8581' }}>05</Text>
+  </Box>
+  <Box style={{ position: 'absolute', left: 60, top: 170, width: 1160, height: 1, background: '#D6CEC2' }} />
+
+  <Box style={{ position: 'absolute', left: 60, top: 210, width: 1160, flexDirection: 'row', justifyContent: 'space-between' }}>
+    {[
+      ['1', '口述文本', '访谈与故事\n结构化节点'],
+      ['2', '文生图', 'Lux3D\n生成物品图'],
+      ['3', '图生 3D', 'Lux3D\n生成 3D 模型'],
+      ['4', 'GLB 资产', '解压提取\n网格与贴图'],
+      ['5', '网页呈现', 'three.js\n拖拽旋转'],
+    ].map((s, i) => (
+      <Box key={i} style={{ width: 205, alignItems: 'center' }}>
+        <Box style={{ width: 60, height: 60, borderRadius: 30, background: i === 1 || i === 2 ? '#684F48' : '#EAE4DB', alignItems: 'center', justifyContent: 'center' }}>
+          <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 26, fontWeight: 'bold', color: i === 1 || i === 2 ? '#FDF9F2' : '#684F48' }}>{s[0]}</Text>
+        </Box>
+        <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 21, color: '#33241F', marginTop: 16 }}>{s[1]}</Text>
+        <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 15, color: '#8E8581', marginTop: 10, lineHeight: 1.5, textAlign: 'center' }}>{s[2]}</Text>
+      </Box>
+    ))}
+  </Box>
+
+  <Box style={{ position: 'absolute', left: 60, top: 420, width: 1160, height: 2, background: '#D6CEC2' }} />
+  <Box style={{ position: 'absolute', left: 355, top: 396, width: 450, paddingTop: 10, paddingBottom: 10, background: '#241C19', borderRadius: 8, alignItems: 'center' }}>
+    <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 18, color: '#FDF9F2' }}>群核 Lux3D 承担第 2、3 两个核心环节</Text>
+  </Box>
+
+  <Box style={{ position: 'absolute', left: 60, top: 480, width: 1160, flexDirection: 'row', gap: 24 }}>
+    <Box style={{ flex: 1, padding: 22, background: '#EAE4DB', borderRadius: 12 }}>
+      <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 20, color: '#33241F' }}>批量生产</Text>
+      <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 16, color: '#503C36', marginTop: 10, lineHeight: 1.55 }}>8 件物品排队自动生成，断点续跑，失败不重复提交。</Text>
+    </Box>
+    <Box style={{ flex: 1, padding: 22, background: '#EAE4DB', borderRadius: 12 }}>
+      <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 20, color: '#33241F' }}>成本控制</Text>
+      <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 16, color: '#503C36', marginTop: 10, lineHeight: 1.55 }}>关键节点做 3D，其余用图文，积分与等待时间可控。</Text>
+    </Box>
+  </Box>
+  <Text style={{ position: 'absolute', left: 60, bottom: 24, fontFamily: 'Source Han Sans, sans-serif', fontSize: 14, color: '#8E8581' }}>拾光 · AI 人生回忆录　|　05</Text>
+</Slide>
