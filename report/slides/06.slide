@@ -1,0 +1,35 @@
+<Slide style={{ width: '1280px', height: '720px', padding: '0px', background: '#241C19', position: 'relative' }}>
+  <Text style={{ position: 'absolute', left: 60, top: 48, fontFamily: 'Source Han Sans, sans-serif', fontSize: 14, color: '#C9A96E', letterSpacing: 3 }}>03 · AHOL LUX3D</Text>
+  <Text style={{ position: 'absolute', right: 60, top: 48, fontFamily: 'Source Han Sans, sans-serif', fontSize: 14, color: '#8E8581' }}>06</Text>
+
+  <Box style={{ position: 'absolute', left: 60, top: 110, width: 1160, flexDirection: 'row', alignItems: 'center', gap: 50 }}>
+    <Box>
+      <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 110, fontWeight: 'bold', color: '#C9A96E', lineHeight: 1 }}>100%</Text>
+    </Box>
+    <Box style={{ width: 620 }}>
+      <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 30, color: '#FDF9F2', lineHeight: 1.4 }}>8 件时代物品，全部由群核 Lux3D 生成</Text>
+      <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 17, color: '#C9BBAE', marginTop: 12, lineHeight: 1.65 }}>不是装饰性的点缀，而是整部作品的核心资产与体验载体——Lux3D 在 3D 资产生成与核心体验中发挥了实质作用。</Text>
+    </Box>
+  </Box>
+
+  <Box style={{ position: 'absolute', left: 60, top: 340, width: 1160, height: 1, background: '#4A3E36' }} />
+
+  <Box style={{ position: 'absolute', left: 60, top: 372, width: 1160, flexDirection: 'row', gap: 26 }}>
+    {[
+      ['文生图', 'multimodal-to-image 接口，为每件时代物品生成写实参考图，作为 3D 生成的依据。'],
+      ['图生 3D', 'img-to-3d 接口，把参考图转为带 PBR 贴图的三维网格，产出 zip 内含 GLB 与 3DGS 文件。'],
+      ['批量队列', '自研队列脚本：上传→提交→轮询→落盘全程自动化，断点续跑、不重复扣费。'],
+    ].map((c, i) => (
+      <Box key={i} style={{ flex: 1, padding: 24, background: '#332820', borderRadius: 12, minHeight: 190 }}>
+        <Box style={{ width: 34, height: 3, background: '#C9A96E', marginBottom: 16 }} />
+        <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 23, color: '#FDF9F2' }}>{c[0]}</Text>
+        <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 15, color: '#D8C9B4', marginTop: 12, lineHeight: 1.65 }}>{c[1]}</Text>
+      </Box>
+    ))}
+  </Box>
+
+  <Box style={{ position: 'absolute', left: 60, top: 618, width: 1160, flexDirection: 'row', alignItems: 'center', gap: 12 }}>
+    <Box style={{ width: 8, height: 8, background: '#C9A96E', borderRadius: 4 }} />
+    <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 15, color: '#C9BBAE' }}>技术栈：Lux3D API · Aholo 3D Viewer · three.js · 自研批量生产脚本</Text>
+  </Box>
+</Slide>
