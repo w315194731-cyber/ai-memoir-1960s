@@ -1,0 +1,31 @@
+<Slide style={{ width: '1280px', height: '720px', padding: '0px', background: '#FEFCF8', position: 'relative' }}>
+  <Box style={{ position: 'absolute', left: 0, top: 0, width: 400, height: 720, background: '#241C19', padding: 60, justifyContent: 'space-between' }}>
+    <Box>
+      <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 14, color: '#C9A96E', letterSpacing: 3 }}>01 · OVERVIEW</Text>
+      <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 38, fontWeight: 'bold', color: '#FDF9F2', marginTop: 24, lineHeight: 1.35 }}>一个人<br />一部缩微的<br />中国当代史</Text>
+    </Box>
+    <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 15, color: '#B9A99A', lineHeight: 1.7 }}>项目概览</Text>
+  </Box>
+  <Box style={{ position: 'absolute', left: 448, top: 70, width: 760 }}>
+    <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 30, color: '#33241F', lineHeight: 1.5 }}>陈守义，1963 年生于县城机械厂家属院。</Text>
+    <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 18, color: '#503C36', marginTop: 22, lineHeight: 1.75 }}>他不是英雄，也没有传奇。他只是千千万万六零后中的一个——经历过凭票买粮的年月，在煤油灯下迎过恢复高考，进城进厂、下岗再起步，把女儿供成了大学生，自己六十岁学会用智能手机。</Text>
+  </Box>
+  <Box style={{ position: 'absolute', left: 448, top: 300, width: 760, flexDirection: 'row', gap: 40 }}>
+    <Box>
+      <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 92, fontWeight: 'bold', color: '#684F48', lineHeight: 1 }}>60</Text>
+      <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 16, color: '#8E8581', marginTop: 4 }}>年人生跨度</Text>
+    </Box>
+    <Box>
+      <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 92, fontWeight: 'bold', color: '#684F48', lineHeight: 1 }}>8</Text>
+      <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 16, color: '#8E8581', marginTop: 4 }}>个关键节点</Text>
+    </Box>
+    <Box>
+      <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 92, fontWeight: 'bold', color: '#684F48', lineHeight: 1 }}>8</Text>
+      <Text style={{ fontFamily: 'Source Han Sans, sans-serif', fontSize: 16, color: '#8E8581', marginTop: 4 }}>件 3D 物品</Text>
+    </Box>
+  </Box>
+  <Box style={{ position: 'absolute', left: 448, top: 480, width: 760, background: '#EAE4DB', padding: 24, borderRadius: 12 }}>
+    <Text style={{ fontFamily: 'LXGW WenKai, serif', fontSize: 22, color: '#33241F', lineHeight: 1.55 }}>我们想验证一件事：用 AI，能不能把一段口述，变成一本既读得懂、又走得进去的人生回忆录。</Text>
+  </Box>
+  <Text style={{ position: 'absolute', left: 448, bottom: 30, fontFamily: 'Source Han Sans, sans-serif', fontSize: 14, color: '#8E8581' }}>拾光 · AI 人生回忆录　|　03</Text>
+</Slide>
