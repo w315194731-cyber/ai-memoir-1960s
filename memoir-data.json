@@ -1,0 +1,133 @@
+{
+  "_comment": "六零后人生回忆录数据。每章含年份、标题、故事正文、时代注脚、lesson，以及一件标志物 artifact（将据此生成图片与3D模型）。",
+  "person": {
+    "name": "陈守义",
+    "birthYear": 1963,
+    "birthPlace": "南方某省，县城机械厂家属院",
+    "tagline": "一个从家属院走出来的普通中国人，和他在时代浪潮里的六十年",
+    "intro": "他不是英雄，也没有传奇。他只是千千万万六零后中的一个——经历过凭票买粮的年月，在煤油灯下迎过恢复高考，进城进厂、下岗再起步，把女儿供成了大学生，自己六十岁学会了用智能手机。他的一辈子，就是一部缩微的中国当代史。",
+    "lifeSpan": "1963 — 至今"
+  },
+  "chapters": [
+    {
+      "id": "ch1-childhood",
+      "era": "童年 · 1963—1970",
+      "year": "1968",
+      "title": "票证里的童年",
+      "subtitle": "新三年，旧三年，缝缝补补又三年",
+      "story": "我出生在县机械厂的家属院，一排红砖平房，十几户人家共用一个水龙头。那时候买粮要粮票，买布要布票，油票、糖票叠得整整齐齐揣在母亲贴身的布袋里。哥哥穿完的衣服轮到我，补丁摞补丁，袖口磨得发白。过年才有白面馒头和大块的肉，一块水果糖能甜上整整一个正月。没有玩具，我们就滚铁环、踢毽子、打沙包，把废橡胶手套剪成皮筋，把鸡尾巴毛扎成毽子。傍晚，全院的人搬着小板凳，挤到邻居家那台九寸黑白电视机前，看《新闻联播》，屏幕雪花沙沙响，谁也不肯先走。",
+      "eraNote": "1955—1980年代，中国实行票证供应。粮票、布票、油票是日常生活的通行证，直到90年代初才逐步退出历史舞台。",
+      "lesson": "匮乏年代教会我的第一件事：珍惜。一块糖的甜，能记一辈子。",
+      "artifact": {
+        "name": "红双喜搪瓷缸",
+        "prompt": "A nostalgic Chinese enamel cup from the 1970s, white enamel with red double-happiness 囍 character and red floral pattern, slightly chipped rim showing dark metal, sitting on a simple wooden table, soft natural window light, photorealistic product photo, plain background, centered single object",
+        "caption": "家里来客人才拿出来的搪瓷缸，缸沿磕掉了瓷，母亲说‘磕了瓷才是自己的’。"
+      }
+    },
+    {
+      "id": "ch2-school",
+      "era": "少年 · 1971—1976",
+      "year": "1975",
+      "title": "煤油灯下的教室",
+      "subtitle": "石板、石笔，和漏雨的屋顶",
+      "story": "上小学不交学费，只交几毛钱杂费。课本薄，没有英语课，语文课本里全是时代短文。我们用的是石板和石笔，买不起铅笔的孩子就用炭条在石板上写字。教室是砖瓦平房，黑板就是木板刷上黑油漆，角度不对就反光。一下雨屋顶漏水，老师拿脸盆接着，‘滴答、滴答’的水声伴着讲课声。劳动课是必修，割草、拾柴、捡麦穗。放学没有辅导班，放牛、喂猪、做家务才是正事。村里轮流放露天电影，全村老少搬着板凳去看，那是少年时代最盛大的节日。",
+      "eraNote": "70年代 Teens 的教育极简：石板与石笔是穷孩子的文具，露天电影是农村最主要的文化生活。",
+      "lesson": "在漏雨的教室里读书，让我懂得：条件差，从来不是不努力的理由。",
+      "artifact": {
+        "name": "石板和石笔",
+        "prompt": "A vintage Chinese school slate writing board from the 1970s, dark grey flat stone slate in a simple wooden frame, with a white stone pencil lying on it, faint chalk writing traces, placed on an old wooden school desk, warm nostalgic light, photorealistic, plain background, centered single object",
+        "caption": "一块石板、一支石笔，写满了又抹掉，抹掉了再写。那是我们最初的‘作业本’。"
+      }
+    },
+    {
+      "id": "ch3-gaokao",
+      "era": "青年 · 1977—1981",
+      "year": "1977",
+      "title": "恢复高考那一年",
+      "subtitle": "知识，第一次能改变命运",
+      "story": "1977年秋天，恢复高考的消息传到县城，整个家属院都沸腾了。哥哥那一年考上了船舶工业学院，是我们院里第一个大学生，母亲高兴得整夜没睡。我那时读高中，课本开始改版，旧教材慢慢换掉，学习气氛一天比一天浓。晚上停电，我们就点着煤油灯做题，灯芯熏得鼻孔发黑。收音机是家里最贵重的物件，晚上偷偷听邓丽君的歌，怕被说成‘靡靡之音’。我暗暗下定决心，也要像哥哥那样，靠读书走出这条巷子。",
+      "eraNote": "1977年恢复高考，全国约610万人报考，录取仅约27万。‘知识改变命运’成为一代人的信念。",
+      "lesson": "机会来的时候，从来不敲门。它只留给准备好了的人。",
+      "artifact": {
+        "name": "老式煤油灯",
+        "prompt": "An antique Chinese kerosene oil lamp from the 1970s, glass chimney stained with soot, metal base with a warm amber flame glowing, sitting on an old wooden desk next to a stack of books, dim warm nostalgic light, photorealistic, plain background, centered single object",
+        "caption": "那盏煤油灯，照着我做完了一道又一道题，也照亮了整个国家重新开始的夜晚。"
+      }
+    },
+    {
+      "id": "ch4-work",
+      "era": "进厂 · 1982—1991",
+      "year": "1983",
+      "title": "端上铁饭碗",
+      "subtitle": "自行车、的确良，和改革开放的风",
+      "story": "1983年，我进了县里的一家大型国企，成了一名工人，捧上了人人羡慕的‘铁饭碗’。那时候‘楼上楼下，电灯电话’是我们向往的生活。我攒了整整两年的工资，买了一辆永久牌二八自行车，骑着它上下班，车铃叮当响，心里美得很。姑娘们攒几个月布票扯回的的确良布料，举在镜子前比；年轻人谈恋爱，骑着二八杠逛一圈公园，换一块绣梅花的手帕，就算定下了情意。厂里的喇叭循环放着《年轻的朋友来相会》，所有人都相信，明天会更好。",
+      "eraNote": "80年代，永久、凤凰自行车是家庭重要资产；的确良是人人羡慕的高档面料；《年轻的朋友来相会》是时代金曲。",
+      "lesson": "第一份工资买来的不只是自行车，是一个年轻人对好日子的全部想象。",
+      "artifact": {
+        "name": "永久牌二八自行车",
+        "prompt": "A classic Chinese Forever brand 28-inch bicycle from the 1980s, black frame with chrome details, vintage design, leather saddle, bell on handlebar, standing on plain ground, soft daylight, photorealistic, plain background, full object visible, centered",
+        "caption": "永久牌二八杠，载着我上下班，也载着我相亲时那个坐在后座上的姑娘。"
+      }
+    },
+    {
+      "id": "ch5-downsizing",
+      "era": "中年 · 1992—2000",
+      "year": "1998",
+      "title": "下岗那年",
+      "subtitle": "铁饭碗碎了，日子还得过",
+      "story": "90年代中后期，国企改革，下岗潮来了。我所在的厂子效益下滑，1998年，我也拿到了那张下岗通知。那段时间，院子里静悄悄的，很多往日一起上班的兄弟，一夜之间都没了单位。上有年迈的父母要赡养，下有正读中学的女儿，我四十岁不到，却第一次尝到了茫然无措的滋味。我把烟戒了，开始在街上摆摊，后来又与人合伙开了个小修理铺。从‘单位人’变成‘社会人’，这一步迈得艰难，但日子，终究是一天一天撑过来了。",
+      "eraNote": "90年代末国企改革，数千万工人下岗。‘下岗’成为一个时代集体记忆，很多人从单位人变为自谋职业者。",
+      "lesson": "铁饭碗碎了才发现：真正端得住的饭碗，是自己这双手。",
+      "artifact": {
+        "name": "老式BP机",
+        "prompt": "A vintage Chinese pager (BP machine / beeper) from the late 1990s, black plastic body with small LCD screen showing numbers, a belt clip on the back, resting on a wooden surface, soft nostalgic light, photorealistic, plain background, centered single object",
+        "caption": "下岗后联系活儿全靠它。‘CALL我，我复机’——那是最早的‘已读回执’。"
+      }
+    },
+    {
+      "id": "ch6-house",
+      "era": "而立之后 · 2001—2010",
+      "year": "2005",
+      "title": "终于有了自己的房子",
+      "subtitle": "攒了一辈子的钱，换一把钥匙",
+      "story": "2005年，我和妻子攒了半辈子的积蓄，加上向亲戚借的一点，付了首付，买下了一套七十多平米的商品房。签合同那天，手一直在抖。搬家那天，女儿帮我把那台老黑白电视擦了又擦——它早该淘汰了，我却一直舍不得扔。新房子的灯很亮，屋子很干净，可我总觉得，心里最亮的，还是当年家属院里那盏煤油灯。那年，我第一次学会用电脑上网，看新闻、查资料，还学会了用QQ，跟远方的老同学重新联系上了。",
+      "eraNote": "2000年代中国房地产市场化加速，商品房进入寻常家庭；QQ、互联网开始普及，改变沟通方式。",
+      "lesson": "房子是安身的地方，可让人踏实的，从来是一家人在一起。",
+      "artifact": {
+        "name": "14寸黑白电视机",
+        "prompt": "A vintage 14-inch black and white CRT television from the 1980s-90s, beige plastic case, round knobs, small curved screen, rabbit-ear antenna extended, sitting on an old wooden TV stand, warm nostalgic light, photorealistic, plain background, centered single object",
+        "caption": "这台黑白电视，从家属院搬到新楼房，看了《霍元甲》，也看了女儿考上大学的新闻。"
+      }
+    },
+    {
+      "id": "ch7-smartphone",
+      "era": "老年 · 2011—2020",
+      "year": "2016",
+      "title": "六十岁学会用智能手机",
+      "subtitle": "世界变得很快，但我没被落下",
+      "story": "2016年，我六十岁。女儿给我买了一台智能手机，我一开始连滑动屏幕都不会，点错了就慌。是孙女手把手教我：这个是微信，点一下就能跟我说话；这个是扫码，买东西不用带现金了。我慢慢学会了视频通话，学会了在手机上看到老家的孙子，学会了用手机支付，甚至学会了在朋友圈发一张自己种的月季花。有一次我发的照片得了十几个赞，我高兴了一整天。世界变得很快，可我告诉自己：只要愿意学，就不算老。",
+      "eraNote": "2010年代智能手机与移动支付普及，微信成为国民应用。许多中老年人通过家庭反哺完成‘数字融入’。",
+      "lesson": "年纪大了，最怕的不是学不会，是不敢学。",
+      "artifact": {
+        "name": "早期智能手机",
+        "prompt": "An early smartphone from around 2012, black rectangular touchscreen phone with physical home button, screen showing a simple chat app interface, lying on a wooden table, soft modern light, photorealistic, plain background, centered single object",
+        "caption": "我的第一台智能手机。它让我在六十岁，重新认识了这个世界。"
+      }
+    },
+    {
+      "id": "ch8-today",
+      "era": "如今 · 2021—至今",
+      "year": "2025",
+      "title": "把这些年，讲给子孙听",
+      "subtitle": "普通人的一生，也值得被记住",
+      "story": "如今我六十多了，退休在家，种种花、带带孙辈。有时候孙女问我：‘爷爷，你小时候是什么样的？’我讲粮票，讲煤油灯，讲那辆二八自行车，她瞪大眼睛，像听远古的故事。我忽然觉得，这些平凡的日子，如果不讲出来，就真的没了。于是我开始把这辈子的事，一件一件记下来——不是为了给谁看，只是想让后来的人知道，有一代人，是这样过来的。他们吃过苦，也见过光；他们没说过什么豪言壮语，却把日子，踏踏实实过成了一部历史。",
+      "eraNote": "口述史与家庭记忆的价值：每个普通人的一生，都是一部不可复制的时代见证。",
+      "lesson": "一个家最贵的传家宝，不是钱，是有人愿意把这一生，认真讲给你听。",
+      "artifact": {
+        "name": "老搪瓷脸盆",
+        "prompt": "A vintage Chinese enamel washbasin from the 1970s, white enamel with red floral pattern and red rim, slight chips and rust spots showing age, placed on a simple wooden stool, warm nostalgic light, photorealistic, plain background, centered single object",
+        "caption": "母亲陪嫁的搪瓷脸盆，用了五十年。 everyday objects outlive the people who cherished them."
+      }
+    }
+  ]
+}
